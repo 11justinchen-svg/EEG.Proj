@@ -1,0 +1,60 @@
+{
+  "author": {
+    "name": "Justin Chen and Allen Fan",
+    "school": "The Harker School",
+    "tagline": "Computational Neuroscience · Biomedical Engineering · Machine Learning",
+    "cycle": "CSEF / ISEF 2027 · Biomedical Engineering",
+    "email": "11justinchen@gmail.com",
+    "github": "https://github.com/",
+    "paper": "#"
+  },
+  "hero": {
+    "title": "EEG-Guided Neural Scaffold Design",
+    "subtitle": "Using Functional Connectivity Analysis to Design Patient-Specific Post-Stroke Brain Repair Architectures",
+    "hook": "The first computational pipeline that fuses EEG, DTI, and MRI to generate 3D-printable neural scaffolds with anatomically curved microchannels — sized by how functionally critical each connection is.",
+    "metadata": "CSEF / ISEF 2027 · Biomedical Engineering · Justin Chen and Allen Fan"
+  },
+  "nre": {
+    "formula": "NRE = \\sum D(i,j) \\cdot \\mathbf{1}[\\text{has channel}(i,j)] \\; / \\; \\sum D(i,j)",
+    "description": "NRE measures what fraction of the total connectivity deficit — weighted by magnitude — is addressed by the scaffold's channels.",
+    "conditions": [
+      {
+        "id": "A",
+        "name": "EEG + DTI Guided",
+        "value": 0.73,
+        "tone": "teal",
+        "note": "Channels routed by DTI trajectories, prioritized by EEG deficit magnitude."
+      },
+      {
+        "id": "B",
+        "name": "Anatomy-Only",
+        "value": 0.41,
+        "tone": "slate",
+        "note": "Channels follow straight lines through cavity, no functional weighting."
+      },
+      {
+        "id": "C",
+        "name": "Random-Pore",
+        "value": 0.12,
+        "tone": "slate-deep",
+        "note": "Baseline: isotropic scaffold with no directional preference."
+      }
+    ],
+    "footnote": "All three conditions use identical total channel volume. Differences in NRE are due to channel orientation and prioritization, not quantity."
+  },
+  "pipelineTools": [
+    "MNE-Python",
+    "DIPY",
+    "Trimesh",
+    "NetworkX",
+    "scikit-learn",
+    "nnU-Net",
+    "FreeSurfer"
+  ],
+  "dataSources": [
+    "ATLAS v2.0",
+    "Human Connectome Project",
+    "PhysioNet",
+    "TUH EEG Corpus"
+  ]
+}

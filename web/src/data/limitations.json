@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Hemispheric Asymmetry",
+    "limitation": "The brain is not perfectly symmetric; mirroring tracts across the midline introduces anatomical error.",
+    "mitigation": "Use HCP population-average tract atlases rather than single-subject mirrors; report per-tract confidence intervals."
+  },
+  {
+    "title": "Tract-to-Region Mapping",
+    "limitation": "DTI streamline endpoints are not natively labeled with cortical region identities.",
+    "mitigation": "Volumetric Desikan-Killiany atlas lookup with nearest-neighbor fallback for endpoints near gray-matter boundaries."
+  },
+  {
+    "title": "Crossing Fibers",
+    "limitation": "Single-tensor DTI cannot resolve voxels where tracts cross or kiss, degrading trajectory accuracy.",
+    "mitigation": "HCP data uses multi-shell CSD to resolve crossings; we fall back to centroid approximation in our own DTI."
+  },
+  {
+    "title": "Channel Overlap",
+    "limitation": "Large cavities may generate more proposed channels than geometry can fit without collision.",
+    "mitigation": "Priority placement ordered by deficit magnitude, collision detection, 30% cavity fill cap, 50 µm minimum wall thickness."
+  },
+  {
+    "title": "Registration Error",
+    "limitation": "Accumulated 5–10 mm error when co-registering EEG source space to DTI to MRI.",
+    "mitigation": "Channels provide centimeter-scale directional guidance, not millimeter targeting — error budget is within tolerance."
+  },
+  {
+    "title": "Printability",
+    "limitation": "Consumer FDM printers cannot produce 100 µm hollow channels in soft materials.",
+    "mitigation": "Demonstrate at 5× scale for proof-of-concept. Clinical deployment requires a bioprinter (e.g., LIFT or DLP-based)."
+  },
+  {
+    "title": "No Biological Ground Truth",
+    "limitation": "NRE is a computational metric; it does not yet prove biological function restoration.",
+    "mitigation": "NRE demonstrates optimization versus controls. Phase 5 (wet-lab validation with SH-SY5Y neurite tracking) tests biological outcome."
+  },
+  {
+    "title": "Cross-Patient Data",
+    "limitation": "Public datasets pair EEG and MRI from different patients; direct fusion is impossible.",
+    "mitigation": "Virtual-lesion analysis applies healthy EEG to atlas lesions. Clinical translation would use same-patient acquisition."
+  },
+  {
+    "title": "Oxygen Diffusion",
+    "limitation": "Tissue more than ~200 µm from a vessel cannot survive without active perfusion.",
+    "mitigation": "80% porosity infill between channels; clinical version will include VEGF-loaded microreservoirs to drive vascular ingrowth."
+  },
+  {
+    "title": "Glial Scar",
+    "limitation": "Reactive astrocytes form a CSPG-rich scar at cavity boundaries that blocks axonal entry.",
+    "mitigation": "Channel entry points can be loaded with chondroitinase ABC (ChABC) to digest scar CSPGs locally."
+  },
+  {
+    "title": "Implantation Timing",
+    "limitation": "The subacute window (2–6 weeks post-stroke) closes before chronic glial scarring, but EEG at that window is noisy.",
+    "mitigation": "Pipeline is designed for subacute EEG; artifact-robust wPLI and ICA minimize noise; pre-surgical planning latency < 48 hr."
+  },
+  {
+    "title": "EEG Channel Count",
+    "limitation": "Our own laboratory EEG recordings (8 channels) have insufficient spatial resolution for source localization.",
+    "mitigation": "Electrode-level connectivity used for our data; 64-channel public datasets used for full source-level analysis."
+  }
+]

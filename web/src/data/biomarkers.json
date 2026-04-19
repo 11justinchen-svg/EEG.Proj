@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Gamma Small-World Index",
+    "p_fdr": "<0.001",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Graph Theory"
+  },
+  {
+    "name": "Interhemispheric Alpha Coherence",
+    "p_fdr": "<0.001",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Connectivity"
+  },
+  {
+    "name": "Beta Motor Network wPLI",
+    "p_fdr": "<0.001",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Connectivity"
+  },
+  {
+    "name": "Delta Power Asymmetry (Lesioned Hemisphere)",
+    "p_fdr": "<0.001",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Increased",
+    "domain": "Spectral"
+  },
+  {
+    "name": "Theta Fronto-Parietal Coupling",
+    "p_fdr": "<0.01",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Connectivity"
+  },
+  {
+    "name": "Alpha Posterior Peak Frequency",
+    "p_fdr": "<0.01",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Spectral"
+  },
+  {
+    "name": "Global Efficiency (Alpha)",
+    "p_fdr": "<0.01",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Graph Theory"
+  },
+  {
+    "name": "Clustering Coefficient (Beta)",
+    "p_fdr": "<0.01",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Graph Theory"
+  },
+  {
+    "name": "dDTF Frontal → Parietal (Beta)",
+    "p_fdr": "<0.01",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Directed Connectivity"
+  },
+  {
+    "name": "gPDC Motor → Sensory (Beta)",
+    "p_fdr": "<0.05",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Directed Connectivity"
+  },
+  {
+    "name": "Node Betweenness (Contralesional Hub)",
+    "p_fdr": "<0.05",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Increased",
+    "domain": "Graph Theory"
+  },
+  {
+    "name": "Spectral Entropy (Lesioned Hemisphere)",
+    "p_fdr": "<0.05",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Spectral"
+  },
+  {
+    "name": "Alpha Desync Latency (Motor)",
+    "p_fdr": "<0.05",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Increased",
+    "domain": "Temporal"
+  },
+  {
+    "name": "Gamma Cross-Frequency Coupling",
+    "p_fdr": "<0.05",
+    "f_stat": "—",
+    "eta_sq": "—",
+    "direction": "Decreased",
+    "domain": "Cross-Frequency"
+  }
+]

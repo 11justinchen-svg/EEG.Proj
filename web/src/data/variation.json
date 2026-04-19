@@ -1,0 +1,26 @@
+[
+  {
+    "subject": "S-07",
+    "nre": 0.78,
+    "primary_channels": "Callosal genu · Precentral ↔ mirror",
+    "note": "Unusually strong interhemispheric alpha → prioritized callosal reconnection."
+  },
+  {
+    "subject": "S-12",
+    "nre": 0.69,
+    "primary_channels": "Frontal ↔ parietal · Intra-hemispheric",
+    "note": "Weak callosal connectivity → algorithm favored ipsilateral fronto-parietal routing."
+  },
+  {
+    "subject": "S-15",
+    "nre": 0.72,
+    "primary_channels": "Temporal ↔ inferior parietal",
+    "note": "Dominant theta fronto-temporal coupling → language-network channel density boosted."
+  },
+  {
+    "subject": "S-19",
+    "nre": 0.66,
+    "primary_channels": "Motor strip · Subcortical loops",
+    "note": "Elevated beta in motor cortex → wider channels along corticospinal trajectories."
+  }
+]

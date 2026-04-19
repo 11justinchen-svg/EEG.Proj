@@ -1,0 +1,26 @@
+[
+  {
+    "index": 1,
+    "name": "T1 MRI",
+    "icon": "Brain",
+    "measures": "Tissue density at each voxel",
+    "gives": "Lesion cavity geometry → scaffold outer shell",
+    "cannot": "Wiring information · No functional data"
+  },
+  {
+    "index": 2,
+    "name": "DTI Tractography",
+    "icon": "GitBranch",
+    "measures": "Water diffusion direction → white-matter tract paths",
+    "gives": "Curved channel trajectories following real anatomy",
+    "cannot": "Which tracts matter most functionally"
+  },
+  {
+    "index": 3,
+    "name": "EEG Connectivity",
+    "icon": "Activity",
+    "measures": "Summed postsynaptic potentials → functional brain communication",
+    "gives": "Channel prioritization + diameter (stronger deficit → wider channel)",
+    "cannot": "Physical geometry · Tract trajectories"
+  }
+]

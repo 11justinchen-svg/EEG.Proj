@@ -1,0 +1,69 @@
+[
+  {
+    "step": 1,
+    "title": "EEG Preprocessing",
+    "eyebrow": "Signal conditioning",
+    "description": "Raw EEG is bandpass filtered (0.5–45 Hz), artifacts removed via independent component analysis, and segmented into 2-second epochs for stable spectral estimates.",
+    "snippet": "raw.filter(0.5, 45) → ICA(n_components=20) → Epochs(duration=2.0)",
+    "kind": "code",
+    "footnote": "Artifact rejection removes eye blinks, muscle, and channel drift before source localization."
+  },
+  {
+    "step": 2,
+    "title": "Source Localization — eLORETA",
+    "eyebrow": "Cortical current density",
+    "description": "eLORETA inverts the forward model to estimate where cortical activity originates, mapping 64+ scalp electrodes to ~10,000 cortical vertices, then parcellating into 68 Desikan-Killiany regions.",
+    "snippet": "J = T · V",
+    "kind": "formula",
+    "legend": "J = cortical current density · T = inverse operator · V = scalp voltage",
+    "footnote": "Spatial resolution ≈ 5–7 mm with 64-channel montage; ~1 cm with low-density arrays."
+  },
+  {
+    "step": 3,
+    "title": "Connectivity Analysis — wPLI",
+    "eyebrow": "Functional coupling",
+    "description": "Weighted Phase Lag Index measures functional connectivity between all 2,278 region pairs across 5 canonical bands (δ, θ, α, β, γ). wPLI is robust to volume-conduction artifacts.",
+    "snippet": "wPLI = |E{ |Im(Sxy)| · sign(Im(Sxy)) }| / E{ |Im(Sxy)| }",
+    "kind": "formula",
+    "legend": "Sxy = cross-spectrum between regions x and y",
+    "footnote": "Unlike raw coherence, wPLI rejects zero-lag (volume-conducted) components."
+  },
+  {
+    "step": 4,
+    "title": "Deficit Matrix",
+    "eyebrow": "Healthy vs stroke",
+    "description": "Comparing stroke connectivity against a healthy baseline reveals which pathways are broken and by how much. False-discovery-rate correction controls for the massive test count.",
+    "snippet": "D(i, j, b) = mean(C_healthy) − C_stroke",
+    "kind": "formula",
+    "legend": "i, j = region indices · b = frequency band",
+    "footnote": "FDR-corrected across 11,390 tests (2,278 region pairs × 5 bands)."
+  },
+  {
+    "step": 5,
+    "title": "DTI Tract Routing",
+    "eyebrow": "Anatomical trajectories",
+    "description": "Streamlines from the HCP tractography atlas that pass through the lesion mask are flagged as destroyed. Their intra-cavity segments are extracted and smoothed with cubic B-splines.",
+    "snippet": "destroyed = target(streamlines, affine, lesion_mask) → extract_segment() → splprep(k=3)",
+    "kind": "code",
+    "footnote": "Curved channels follow real anatomy rather than naive straight lines."
+  },
+  {
+    "step": 6,
+    "title": "Channel Prioritization",
+    "eyebrow": "Functionally weighted",
+    "description": "Each channel's diameter scales with the functional deficit magnitude of the connection it restores. Stronger deficit → wider channel → higher axonal carrying capacity. Placement uses priority ordering with collision detection.",
+    "snippet": "diameter = 100 + 200 · (D_total / max_deficit)   µm",
+    "kind": "formula",
+    "legend": "Range 100–300 µm · Max 30% cavity fill · Minimum wall 50 µm",
+    "footnote": "Priority-first packing guarantees the most critical connections are placed before geometry saturates."
+  },
+  {
+    "step": 7,
+    "title": "Scaffold Assembly",
+    "eyebrow": "Export",
+    "description": "Curved channel tubes are boolean-subtracted from the solid cavity mesh. Porous infill is added between channels for vascular ingrowth. The final scaffold is exported as .STL for bioprinting.",
+    "snippet": "scaffold = boolean_difference(cavity_solid, channel_tubes) → export('scaffold.stl')",
+    "kind": "code",
+    "footnote": "Mesh validated for watertightness, manifold surfaces, and no self-intersections before export."
+  }
+]

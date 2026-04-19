@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homepage for EEG Project Harker 2026. Contributors: Allen Fan, Justin Chen.">
+    <title>EEG Proj Harker 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <main class="glass-container">
+        <h1>EEG Proj <span>Harker 2026</span></h1>
+        <div class="divider"></div>
+        <div class="contributors">
+            <h2>Contributors</h2>
+            <div class="avatars">
+                <div class="avatar-card">
+                    <div class="avatar shadow-1">AF</div>
+                    <p>Allen Fan</p>
+                </div>
+                <div class="avatar-card">
+                    <div class="avatar shadow-2">JC</div>
+                    <p>Justin Chen</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Micro-animations: shifting blobs slightly on mouse move to create a dynamic feel
+        document.addEventListener('mousemove', (e) => {
+            const blobs = document.querySelectorAll('.blob');
+            const x = (e.clientX / window.innerWidth) * 30 - 15;
+            const y = (e.clientY / window.innerHeight) * 30 - 15;
+            
+            if(blobs[0]) blobs[0].style.transform = `translate(${x * 1.5}px, ${y * 1.5}px)`;
+            if(blobs[1]) blobs[1].style.transform = `translate(${-x}px, ${-y}px)`;
+            if(blobs[2]) blobs[2].style.transform = `translate(${x * 0.5}px, ${-y * 1.2}px)`;
+        });
+    </script>
+</body>
+</html>

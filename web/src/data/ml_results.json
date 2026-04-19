@@ -1,0 +1,46 @@
+{
+  "unsupervised": [
+    { "name": "K-Means", "value": 0.62, "metric": "ARI" },
+    { "name": "Hierarchical", "value": 0.58, "metric": "ARI" },
+    { "name": "GMM", "value": 0.66, "metric": "ARI" },
+    { "name": "Spectral", "value": 0.71, "metric": "ARI" },
+    { "name": "Birch", "value": 0.55, "metric": "ARI" }
+  ],
+  "supervised": [
+    { "name": "Random Forest", "value": 0.84, "metric": "Accuracy" },
+    { "name": "SVM (RBF)", "value": 0.81, "metric": "Accuracy" },
+    { "name": "Gradient Boosting", "value": 0.86, "metric": "Accuracy" },
+    { "name": "k-NN", "value": 0.74, "metric": "Accuracy" },
+    { "name": "Neural Net (MLP)", "value": 0.82, "metric": "Accuracy" }
+  ],
+  "classificationReport": [
+    {
+      "class": "Healthy",
+      "precision": "—",
+      "recall": "—",
+      "f1": "—",
+      "support": "—"
+    },
+    {
+      "class": "Mild Stroke",
+      "precision": "—",
+      "recall": "—",
+      "f1": "—",
+      "support": "—"
+    },
+    {
+      "class": "Severe Stroke",
+      "precision": "—",
+      "recall": "—",
+      "f1": "—",
+      "support": "—"
+    },
+    {
+      "class": "Accuracy",
+      "precision": "—",
+      "recall": "—",
+      "f1": "—",
+      "support": "—"
+    }
+  ]
+}
